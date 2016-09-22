@@ -8,7 +8,8 @@ function setup() {
   var textfield = createInput("Kikker sok rappoflappo");
   createP('');
   var submit = createButton("Verbeter");
-  submit.style("padding", "12px");
+  submit.style("padding", "5px");
+  createDiv();
   var test = createButton("Voorbeeld");
-  test.style("padding", "12px");
+  test.style("padding", "5px");
 }
