@@ -28,7 +28,7 @@ function runExample(){
 
 function replaceInput(){
   var text = textfield.value();
-  var regex = /([aeiou])k/g;
+  var regex = /([aeiou])(k|ng)/g;
   text = text.replace(regex, "$1nk");
   regex = /([aeiou])p/g;
   text = text.replace(regex, "$1mp");
