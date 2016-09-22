@@ -9,7 +9,7 @@ function setup() {
   createP('');
   var submit = createButton("Verbeter");
   submit.style("padding", "5px");
-  createDiv();
+  createSpan('');
   var test = createButton("Voorbeeld");
   test.style("padding", "5px");
 }
