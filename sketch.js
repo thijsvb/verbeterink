@@ -2,7 +2,7 @@ var textfield;
 var submit;
 var test;
 
-void setup(){
+function setup() {
   noCanvas();
 
   var textfield = createInput("Kikker sok rappoflappo");
