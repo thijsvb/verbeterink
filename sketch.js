@@ -32,6 +32,8 @@ function replaceInput(){
   text = text.replace(regex, "$1nk");
   regex = /([aeiou])p/gi;
   text = text.replace(regex, "$1mp");
+  regex = /timon/gi;
+  text = text.replace(regex, "hond");
 
   if(outputfield){
     outputfield.remove();
