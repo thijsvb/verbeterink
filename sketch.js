@@ -5,7 +5,7 @@ var example = "Kikkers (Anura) zijn een van de drie groepen van amfibieën, naas
 function setup() {
   noCanvas();
 
-  textfield = createElement("textarea", "Kikker sok rappoflappo");
+  textfield = createElement("textarea", "Kikkers happen engelse papflappen");
   textfield.attribute("cols", "80");
   textfield.attribute("rows", "5")
   createP('');
