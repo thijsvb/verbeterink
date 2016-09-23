@@ -38,16 +38,29 @@ function clearText() {
 
 function replaceInput() {
   var text = textfield.value();
-  var regex = [/([^aeiou][aeiou]+)(kk?|ng)/gi,
+  var regex = [/([^aeiou\s][aeiou]+)kk?/gi,
+    /([aeiou]+)ng/gi,
     /([aeiou])pp?/gi,
     /timon/gi
   ];
+  var replace = ["$1nk", "$1nk", "$1mp", "hond"];
 
-  
+  var words = text.split(/\b\W*\b/g);
+  var verbeterink = [];
+  var vIndex = 0;
+  for (var i = 0; i != words.length; ++i) {
+    for (var j = 0; j != regex.length; ++j) {
+      if (regex[j].test(words[i])) {
+        verbeterink[vIndex] = '\"' + words[i].replace(regex[j], replace[j]) + '\"';
+        ++vIndex;
+      }
+    }
+  }
+  console.log(verbeterink);
 
-  text = text.replace(regex[0], "$1nk");
-  text = text.replace(regex[1], "$1mp");
-  text = text.replace(regex[2], "hond");
+  for (var i = 0; i != regex.length; ++i) {
+    text = text.replace(regex[i], replace[i]);
+  }
 
   if (outputfield) {
     outputfield.remove();
