@@ -11,14 +11,17 @@ function setup() {
   createP('');
   var submit = createButton("Verbeter");
   submit.style("padding", "5px");
+  submit.style("width", "70px");
   submit.mousePressed(replaceInput);
   createSpan("  ");
   var test = createButton("Voorbeeld");
   test.style("padding", "5px");
+  test.style("width", "70px");
   test.mousePressed(runExample);
   createSpan("  ");
   var clear = createButton("Leeg");
   clear.style("padding", "5px");
+  clear.style("width", "70px");
   clear.mousePressed(clearText);
   createP('');
 }
