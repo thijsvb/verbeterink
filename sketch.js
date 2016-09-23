@@ -1,4 +1,4 @@
-var textfield;
+﻿var textfield;
 var outputfield;
 var submit;
 var test;
@@ -28,7 +28,7 @@ function runExample(){
 
 function replaceInput(){
   var text = textfield.value();
-  var regex = /([aeiou])(k|ng)/g;
+  var regex = /([aeiou])(kk?|ng)/g;
   text = text.replace(regex, "$1nk");
   regex = /([aeiou])p/g;
   text = text.replace(regex, "$1mp");
