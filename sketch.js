@@ -38,25 +38,31 @@ function clearText() {
 
 function replaceInput() {
   var text = textfield.value();
-  var regex = [/([^aeiou\s][aeiou]+)kk?/gi,
-    /([aeiou]+)ng/gi,
+  var regex = [/([^aeiou\s][aeiou])kk?/gi,
+    /([aeiou])ng/gi,
     /([aeiou])pp?/gi,
     /timon/gi
   ];
   var replace = ["$1nk", "$1nk", "$1mp", "hond"];
 
   var words = text.split(/\b\W*\b/g);
-  var verbeterink = [];
+  var repWords = [];
   var vIndex = 0;
   for (var i = 0; i != words.length; ++i) {
     for (var j = 0; j != regex.length; ++j) {
       if (regex[j].test(words[i])) {
-        verbeterink[vIndex] = '\"' + words[i].replace(regex[j], replace[j]) + '\"';
+        repWords[vIndex] = words[i].replace(regex[j], replace[j]);
         ++vIndex;
       }
     }
   }
-  console.log(verbeterink);
+  var verbeterink = "";
+  for (var i = 0; i != repWords.length - 1; ++i) {
+    verbeterink += '\"' + repWords[i] + "\", ";
+  }
+  verbeterink += "en \"" + repWords[repWords.length-1] + '\"';
+
+  createP("Volgens mij is het " + verbeterink + " weet niet zeker hoor");
 
   for (var i = 0; i != regex.length; ++i) {
     text = text.replace(regex[i], replace[i]);
